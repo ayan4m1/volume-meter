@@ -27,6 +27,4 @@ void loop() {
   if (db > 0) {
     Serial.printf("%.1f\n", db);
   }
-
-  delay(500);
 }
