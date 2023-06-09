@@ -15,23 +15,22 @@
   A_weighting  // Also avaliable: 'C_weighting' or 'None' (Z_weighting)
 #define LEQ_UNITS "LAeq"  // customize based on above weighting used
 #define DB_UNITS "dBA"    // customize based on above weighting used
-#define USE_DISPLAY 1
 #define MIC_EQUALIZER \
   SPH0645LM4H_B_RB  // See below for defined IIR filters or set to 'None' to
                     // disable
 #define MIC_OFFSET_DB \
-  3.0103  // Default offset (sine-wave RMS vs. dBFS). Modify this value for
-          // linear calibration
+  -28  // Default offset (sine-wave RMS vs. dBFS). Modify this value for
+       // linear calibration
 #define MIC_SENSITIVITY \
   -26  // dBFS value expected at MIC_REF_DB (Sensitivity value from datasheet)
 #define MIC_REF_DB \
   94.0  // Value at which point sensitivity is specified in datasheet (dB)
-#define MIC_OVERLOAD_DB 116.0  // dB - Acoustic overload point
-#define MIC_NOISE_DB 29        // dB - Noise floor
+#define MIC_OVERLOAD_DB 120.0  // dB - Acoustic overload point
+#define MIC_NOISE_DB 10        // dB - Noise floor
 #define MIC_BITS 24            // valid number of bits in I2S data
 #define MIC_CONVERT(s) (s >> (SAMPLE_BITS - MIC_BITS))
 #define MIC_TIMING_SHIFT \
-  0  // Set to one to fix MSB timing for some microphones, i.e. SPH0645LM4H-x
+  1  // Set to one to fix MSB timing for some microphones, i.e. SPH0645LM4H-x
 
 #define I2S_WS PIN_LRCL
 #define I2S_SCK PIN_BCLK
