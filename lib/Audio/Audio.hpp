@@ -12,7 +12,7 @@
 
 #define LEQ_PERIOD 1  // second(s)
 #define WEIGHTING \
-  C_weighting  // Also avaliable: 'C_weighting' or 'None' (Z_weighting)
+  A_weighting  // Also avaliable: 'C_weighting' or 'None' (Z_weighting)
 #define LEQ_UNITS "LAeq"  // customize based on above weighting used
 #define DB_UNITS "dBA"    // customize based on above weighting used
 #define USE_DISPLAY 1
