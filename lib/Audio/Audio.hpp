@@ -10,7 +10,7 @@
 #define PIN_DOUT 17
 #define PIN_BCLK 16
 
-#define LEQ_PERIOD 1  // second(s)
+#define LEQ_PERIOD 0.1  // second(s)
 #define WEIGHTING \
   A_weighting  // Also avaliable: 'C_weighting' or 'None' (Z_weighting)
 #define LEQ_UNITS "LAeq"  // customize based on above weighting used
