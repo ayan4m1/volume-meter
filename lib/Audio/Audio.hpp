@@ -6,9 +6,9 @@
 
 #include "sos-iir-filter.h"
 
-#define PIN_LRCL 18
-#define PIN_DOUT 17
-#define PIN_BCLK 16
+#define PIN_LRCL 39
+#define PIN_DOUT 34
+#define PIN_BCLK 35
 
 #define LEQ_PERIOD 0.1  // second(s)
 #define WEIGHTING \
@@ -19,7 +19,7 @@
   SPH0645LM4H_B_RB  // See below for defined IIR filters or set to 'None' to
                     // disable
 #define MIC_OFFSET_DB \
-  -28  // Default offset (sine-wave RMS vs. dBFS). Modify this value for
+  -18  // Default offset (sine-wave RMS vs. dBFS). Modify this value for
        // linear calibration
 #define MIC_SENSITIVITY \
   -26  // dBFS value expected at MIC_REF_DB (Sensitivity value from datasheet)

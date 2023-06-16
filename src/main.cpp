@@ -5,22 +5,36 @@
 #include <gfx.hpp>
 #include <st7789.hpp>
 
-#include "NotoSans_Bold.hpp"
+// #include "NotoSans_Bold.hpp"
+#include "Telegrama.hpp"
 
 #define VOLUME_DECAY_ALPHA 0.3
 
-#define LCD_WIDTH 128
-#define LCD_HEIGHT 128
-#define LCD_ROTATION 2
+// #define LCD_WIDTH 128
+// #define LCD_HEIGHT 128
+// #define LCD_ROTATION 2
+// #define LCD_HOST SPI1_HOST
+
+// #define PIN_NUM_CS 5
+// #define PIN_NUM_MOSI 2
+// #define PIN_NUM_MISO -1
+// #define PIN_NUM_CLK 3
+// #define PIN_NUM_DC 6
+// #define PIN_NUM_RST 1
+// #define PIN_NUM_BCKL 10
+
+#define LCD_WIDTH 320
+#define LCD_HEIGHT 240
+#define LCD_ROTATION 0
 #define LCD_HOST SPI1_HOST
 
-#define PIN_NUM_CS 5
-#define PIN_NUM_MOSI 2
-#define PIN_NUM_MISO -1
-#define PIN_NUM_CLK 3
-#define PIN_NUM_DC 6
-#define PIN_NUM_RST 1
-#define PIN_NUM_BCKL 10
+#define PIN_NUM_CS 22
+#define PIN_NUM_MOSI 23
+#define PIN_NUM_MISO 25
+#define PIN_NUM_CLK 19
+#define PIN_NUM_DC 21
+#define PIN_NUM_RST 18
+#define PIN_NUM_BCKL 5
 
 using namespace arduino;
 using namespace gfx;
@@ -90,12 +104,12 @@ void loop() {
   sprintf(buffer, "%.0f", decibelAccum);
 
   open_text_info oti;
-  oti.font = &NotoSans_Bold;
-  oti.scale = NotoSans_Bold.scale(64);
+  oti.font = &Telegrama;
+  oti.scale = Telegrama.scale(64);
   oti.text = buffer;
 
-  auto text_size = NotoSans_Bold.measure_text(
-      (ssize16)lcd.bounds().dimensions(), spoint16(0, 0), oti.text, oti.scale);
+  auto text_size = Telegrama.measure_text((ssize16)lcd.bounds().dimensions(),
+                                          spoint16(0, 0), oti.text, oti.scale);
 
   auto text_pos = text_size.bounds().center((srect16)bmp.bounds());
 
